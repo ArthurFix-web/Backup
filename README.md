@@ -2,7 +2,19 @@
 
 Installer für Fix-it-IT Backup (Windows, 64 Bit). Mehr Informationen: https://fix-it-it.de/fix-it-it-backup/
 
-## Version 1.0.6 (aktuell, 20.10.2026)
+## Version 1.0.7 (aktuell, 21.10.2026)
+
+| Version | Datei | SHA-256 |
+|---|---|---|
+| Standalone | `1.0.7/FixItBackup-Standalone-Setup-1_0_7.exe` | `9aa43d48cbe417d1b52d2cd482aba42d703fec739beb1a9e7b8251e0a3767496` |
+| Server | `1.0.7/FixItBackup-Server-Setup-1_0_7.exe` | `eff99b4e8505ee9c3c438151674b475d6fbfa050112c199fdbe5132bcc532aac` |
+| Agent | `1.0.7/FixItBackup-Agent-Setup-1_0_7.exe` | `121a790ee469677accfe527edd89265e01b701433bc70a3d06728ff736733bcc` |
+
+Neu in 1.0.7:
+- Konsole → „Rechner hinzufügen“ → **Installationsdatei herunterladen**: Die Datei lädt das Agent-Setup, prüft die Prüfsumme und bindet den Agent fest an Ihren Server – Schutz vor einem gefälschten Server im Netz.
+- Mehr automatische Tests (Lizenzablauf, Testphase, Lizenzserver nicht erreichbar).
+
+## Version 1.0.6 (20.10.2026)
 
 | Version | Datei | SHA-256 |
 |---|---|---|
