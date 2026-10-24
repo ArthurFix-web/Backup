@@ -2,7 +2,23 @@
 
 Installer für Fix-it-IT Backup (Windows, 64 Bit). Mehr Informationen: https://fix-it-it.de/fix-it-it-backup/
 
-## Version 1.0.7 (aktuell, 21.10.2026)
+## Version 1.0.9 (aktuell, 24.10.2026)
+
+| Version | Datei | SHA-256 |
+|---|---|---|
+| Standalone | `1.0.9/FixItBackup-Standalone-Setup-1_0_9.exe` | `857c91d7f04071cd5f5b337866e74bf2a19eecd7bc5a3b706cf539557a31c5bd` |
+| Server | `1.0.9/FixItBackup-Server-Setup-1_0_9.exe` | `100250d8a8f19c334d7560c236144c5273efb780fb59f8a2e5676f7a4c3fa355` |
+| Agent | `1.0.9/FixItBackup-Agent-Setup-1_0_9.exe` | `79ae76f9f646ce19b225f0ea3bf07aa3b6237e4d3fee6cd0e94650eb2e2128d4` |
+
+Neu in 1.0.9:
+- **Sofortstart (Boot from Backup):** Hyper-V-VMs direkt aus der Sicherung starten – in Minuten statt Stunden. Danach **Abschließen** (die VM wird im laufenden Betrieb zurückgesichert und mit einem kurzen Neustart auf eigene Dateien umgestellt) oder **Verwerfen** (für Wiederherstellungstests). Vorher prüft der Agent, ob der Host genug Arbeitsspeicher frei hat.
+- Konsole: Hinweis nach dem Abschließen, Fortschritt aktualisiert sich selbst; alle Zeiten werden jetzt richtig in Ortszeit angezeigt (vorher 1–2 Stunden zu früh).
+- Lizenz: Rechner mit Hyper-V-Sicherung zählen als Server-Lizenz (alle VMs inklusive) – auch unter Windows 10/11 Pro.
+- Lesbare Fehlermeldungen statt PowerShell-Ausgaben.
+
+Alle Funktionen im Überblick: https://fix-it-it.de/leistungsuebersicht/
+
+## Version 1.0.7 (21.10.2026)
 
 | Version | Datei | SHA-256 |
 |---|---|---|
@@ -32,10 +48,10 @@ Update: Setup einfach über die vorhandene Version installieren – Einstellunge
 
 ### Download prüfen
 
-Die Installer sind noch nicht digital signiert. Vergleichen Sie die Prüfsumme der heruntergeladenen Datei mit der Tabelle bzw. `1.0.6/SHA256SUMS.txt`:
+Die Installer sind noch nicht digital signiert. Vergleichen Sie die Prüfsumme der heruntergeladenen Datei mit der Tabelle bzw. `1.0.9/SHA256SUMS.txt`:
 
 ```powershell
-(Get-FileHash .\FixItBackup-Server-Setup-1_0_6.exe -Algorithm SHA256).Hash
+(Get-FileHash .\FixItBackup-Server-Setup-1_0_9.exe -Algorithm SHA256).Hash
 ```
 
 ## Version 1.0.5
