@@ -2,7 +2,19 @@
 
 Installer für Fix-it-IT Backup (Windows, 64 Bit). Mehr Informationen: https://fix-it-it.de/fix-it-it-backup/
 
-## Version 1.0.10 (aktuell, 24.10.2026) – Sicherheitsupdate
+## Version 1.0.11 (aktuell, 24.10.2026)
+
+| Version | Datei | SHA-256 |
+|---|---|---|
+| Standalone | `1.0.11/FixItBackup-Standalone-Setup-1_0_11.exe` | `e429eaaed75bfe5f50fbe55531d65c498a79eb8e6fc909611e5f2e9566b96b17` |
+| Server | `1.0.11/FixItBackup-Server-Setup-1_0_11.exe` | `99904a4c134258a73a8bd3da534867eb708f130edb2b0fe3e8da3e4c9955c3c4` |
+| Agent | `1.0.11/FixItBackup-Agent-Setup-1_0_11.exe` | `97d2bcde0d2626d71e6f0e374472506d724fbc46d845f0a1e020a01b19ff7631` |
+
+Neu in 1.0.11:
+- **Sicherheit:** Neu installierte Agents suchen den Server nicht mehr selbst im Netzwerk. Verbunden werden sie über die Installationsdatei aus der Konsole („Rechner hinzufügen“), mit `SERVERURL`/`TOKEN`/`THUMBPRINT` beim Setup oder über „Agent registrieren“. Die Netzwerksuche lässt sich mit `AUTOREGISTER=1` einschalten; ein Update übernimmt die bisherige Einstellung.
+- Kleinere Textkorrekturen in der Konsole.
+
+## Version 1.0.10 (24.10.2026) – Sicherheitsupdate
 
 | Version | Datei | SHA-256 |
 |---|---|---|
@@ -62,10 +74,10 @@ Update: Setup einfach über die vorhandene Version installieren – Einstellunge
 
 ### Download prüfen
 
-Die Installer sind noch nicht digital signiert. Vergleichen Sie die Prüfsumme der heruntergeladenen Datei mit der Tabelle bzw. `1.0.10/SHA256SUMS.txt`:
+Die Installer sind noch nicht digital signiert. Vergleichen Sie die Prüfsumme der heruntergeladenen Datei mit der Tabelle bzw. `1.0.11/SHA256SUMS.txt`:
 
 ```powershell
-(Get-FileHash .\FixItBackup-Server-Setup-1_0_10.exe -Algorithm SHA256).Hash
+(Get-FileHash .\FixItBackup-Server-Setup-1_0_11.exe -Algorithm SHA256).Hash
 ```
 
 ## Version 1.0.5
