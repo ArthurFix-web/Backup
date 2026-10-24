@@ -2,7 +2,21 @@
 
 Installer für Fix-it-IT Backup (Windows, 64 Bit). Mehr Informationen: https://fix-it-it.de/fix-it-it-backup/
 
-## Version 1.0.9 (aktuell, 24.10.2026)
+## Version 1.0.10 (aktuell, 24.10.2026) – Sicherheitsupdate
+
+| Version | Datei | SHA-256 |
+|---|---|---|
+| Standalone | `1.0.10/FixItBackup-Standalone-Setup-1_0_10.exe` | `f29f05c2f8475cea4dc1caf6ee62b239a8cdef90e15c1b83765c8d6dc2a2ffd7` |
+| Server | `1.0.10/FixItBackup-Server-Setup-1_0_10.exe` | `6087b80bef2748feeed2481a862f1ac1438374762e8e6395e33f479398ee3c23` |
+| Agent | `1.0.10/FixItBackup-Agent-Setup-1_0_10.exe` | `59f76b99dd8c5b9c67cbbb9a5329ca094ca66b42f1535816088741eeda98280d` |
+
+Neu in 1.0.10 – bitte Server und Agents aktualisieren:
+- **Wiederherstellung:** Pfade aus einer Sicherung, die aus dem Zielordner hinausführen würden (z. B. `..\`), Gerätepfade und Datenströme werden übersprungen und protokolliert – auch bei VMs und Systemabbildern.
+- **Sofortstart:** Die aus der Sicherung bereitgestellten Platten sind nur noch mit einer zufälligen CHAP-Anmeldung je Sitzung erreichbar; andere Programme auf dem Hyper-V-Host haben keinen Zugriff mehr.
+- **Agent:** Sicherere Übergabe von VM-Namen und Pfaden an PowerShell (auch typografische Anführungszeichen).
+- **Server:** Rechner können Läufe nur noch für eigene Jobs melden.
+
+## Version 1.0.9 (24.10.2026)
 
 | Version | Datei | SHA-256 |
 |---|---|---|
@@ -48,10 +62,10 @@ Update: Setup einfach über die vorhandene Version installieren – Einstellunge
 
 ### Download prüfen
 
-Die Installer sind noch nicht digital signiert. Vergleichen Sie die Prüfsumme der heruntergeladenen Datei mit der Tabelle bzw. `1.0.9/SHA256SUMS.txt`:
+Die Installer sind noch nicht digital signiert. Vergleichen Sie die Prüfsumme der heruntergeladenen Datei mit der Tabelle bzw. `1.0.10/SHA256SUMS.txt`:
 
 ```powershell
-(Get-FileHash .\FixItBackup-Server-Setup-1_0_9.exe -Algorithm SHA256).Hash
+(Get-FileHash .\FixItBackup-Server-Setup-1_0_10.exe -Algorithm SHA256).Hash
 ```
 
 ## Version 1.0.5
