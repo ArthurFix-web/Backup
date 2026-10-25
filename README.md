@@ -1,8 +1,20 @@
-# Fix-it-IT Backup – Downloads
+# Fix it IT Backup – Downloads
 
-Installer für Fix-it-IT Backup (Windows, 64 Bit). Mehr Informationen: https://fix-it-it.de/fix-it-it-backup/
+Installer für Fix it IT Backup (Windows, 64 Bit). Mehr Informationen: https://fix-it-it.de/fix-it-it-backup/
 
-## Version 1.0.11 (aktuell, 24.10.2026)
+## Version 1.0.12 (aktuell, 24.10.2026)
+
+| Version | Datei | SHA-256 |
+|---|---|---|
+| Standalone | `1.0.12/FixItBackup-Standalone-Setup-1_0_12.exe` | `53d2909b2a914afa78d1f89b93e09e5049ca1c13faccd59f667093625c87626b` |
+| Server | `1.0.12/FixItBackup-Server-Setup-1_0_12.exe` | `c318e5896b09109ebf07e666d8d8b4e592442f67c5a08886d2ae0a4c875a361f` |
+| Agent | `1.0.12/FixItBackup-Agent-Setup-1_0_12.exe` | `d1990e4d541637dbd19dd53826a33b91266446e87a473ce16a6d884f43b71531` |
+
+Neu in 1.0.12:
+- **Neues Erscheinungsbild:** Fix it IT-Logo in Konsole, Programmsymbol und Installationsassistent, Akzentfarbe Türkis.
+- Funktionen und Einstellungen unverändert – ein Update ist optional.
+
+## Version 1.0.11 (24.10.2026)
 
 | Version | Datei | SHA-256 |
 |---|---|---|

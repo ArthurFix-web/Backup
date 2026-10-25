@@ -1,0 +1,3 @@
+d1990e4d541637dbd19dd53826a33b91266446e87a473ce16a6d884f43b71531  FixItBackup-Agent-Setup-1_0_12.exe
+c318e5896b09109ebf07e666d8d8b4e592442f67c5a08886d2ae0a4c875a361f  FixItBackup-Server-Setup-1_0_12.exe
+53d2909b2a914afa78d1f89b93e09e5049ca1c13faccd59f667093625c87626b  FixItBackup-Standalone-Setup-1_0_12.exe
