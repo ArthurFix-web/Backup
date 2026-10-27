@@ -2,7 +2,19 @@
 
 Installer für Fix it IT Backup (Windows, 64 Bit). Mehr Informationen: https://fix-it-it.de/fix-it-it-backup/
 
-## Version 1.0.12 (aktuell, 24.10.2026)
+## Version 1.0.13 (aktuell, 27.10.2026)
+
+| Version | Datei | SHA-256 |
+|---|---|---|
+| Standalone | `1.0.13/FixItBackup-Standalone-Setup-1_0_13.exe` | `5cad9d9e578b8cf8d2c1c1755931bb340ae14472aaf8396e0e27714e4ecd470a` |
+| Server | `1.0.13/FixItBackup-Server-Setup-1_0_13.exe` | `1d79700a4a39b8f759b6b2a9735d4735ef7e1063a57f2e0e8828f5c6c085a3cf` |
+| Agent | `1.0.13/FixItBackup-Agent-Setup-1_0_13.exe` | `7570cd577cf09da20bb95158b719822e1b537c34892841a3db74f882011985ca` |
+
+Neu in 1.0.13:
+- **Notfall-Wiederherstellung:** Fällt der Backup-Server aus, übernimmt ein neu installierter Server alle Backup-Ziele, Jobs, Rechner und die Lizenz aus der Notfall-Datei `fixit-rescue.json`. Sie liegt in jedem Backup-Ziel, wird automatisch aktuell gehalten und ist mit einem eigenen Notfall-Kennwort verschlüsselt (Einstellungen → Notfall-Wiederherstellung). Ein neuer Server findet die Datei selbst auf seinen Laufwerken; die Rechner melden sich danach ohne neue Registrierung.
+- Bitte Server **und** Agents aktualisieren – die Notfall-Datei schreiben Agents ab 1.0.13.
+
+## Version 1.0.12 (24.10.2026)
 
 | Version | Datei | SHA-256 |
 |---|---|---|
