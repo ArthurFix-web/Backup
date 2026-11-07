@@ -2,7 +2,19 @@
 
 Installer für Fix it IT Backup (Windows, 64 Bit). Mehr Informationen: https://fix-it-it.de/fix-it-it-backup/
 
-## Version 1.0.13 (aktuell, 27.10.2026)
+## Version 1.0.14 (aktuell, 07.11.2026)
+
+| Version | Datei | SHA-256 |
+|---|---|---|
+| Standalone | `1.0.14/FixItBackup-Standalone-Setup-1_0_14.exe` | `9602fed5d711b77412fa1ea90d6bf34e62d94eba4928fb05b0ea759e34e54f03` |
+| Server | `1.0.14/FixItBackup-Server-Setup-1_0_14.exe` | `e7c6362356eb20dd1ec6c56e2b1745eda5812e281ee24b74c05724ade70ebe75` |
+| Agent | `1.0.14/FixItBackup-Agent-Setup-1_0_14.exe` | `f2bd12b19afc7086dcf00cf3683a6a5d6b7317eb9e60f6e4f5e7842a4f4929f2` |
+
+Neu in 1.0.14:
+- **Status-Zugang für Überwachung und KI-Assistenten:** Unter Einstellungen → Status-Zugang einen eigenen Schlüssel erzeugen. Damit fragt ein Überwachungsprogramm oder KI-Assistent `GET /api/status` ab und erhält den Zustand aller Backups (OK/Warnung/Fehler, Kurzfassung, Rechner, Jobs mit Warnungen, überfällige Termine, Backup-Ziele). Der Schlüssel erlaubt nur das Lesen – keine Anmeldung, keine Aktionen, keine Passwörter.
+- Für den Status-Zugang genügt ein Update des Servers; Agents können folgen.
+
+## Version 1.0.13 (27.10.2026)
 
 | Version | Datei | SHA-256 |
 |---|---|---|
