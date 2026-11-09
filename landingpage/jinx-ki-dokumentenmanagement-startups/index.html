@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jinx für Startups | KI-Dokumentenmanagement fürs Büro</title>
+<meta name="description" content="Weniger Papierkram im Startup: Jinx organisiert Dokumente, erkennt Informationen und beantwortet Fragen mit Quellen. Jetzt Demo anfragen.">
+<link rel="canonical" href="https://fix-it-it.de/jinx-ki-dokumentenmanagement-startups/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="Jinx für Startups | KI-Dokumentenmanagement fürs Büro">
+<meta property="og:description" content="Weniger Papierkram im Startup: Jinx organisiert Dokumente, erkennt Informationen und beantwortet Fragen mit Quellen.">
+<meta property="og:url" content="https://fix-it-it.de/jinx-ki-dokumentenmanagement-startups/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Was ist Jinx?", "acceptedAnswer": {"@type": "Answer", "text": "Jinx ist eine KI-gestützte Dokumentenplattform von Fix it IT für kleine Unternehmen und Startups."}},
+    {"@type": "Question", "name": "Kann Jinx meine eigenen Dokumente durchsuchen?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Jinx kann Inhalte erschließen und Fragen mit Quellenangaben beantworten."}},
+    {"@type": "Question", "name": "Löscht Jinx Dateien automatisch?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Duplikate werden zur Prüfung bereitgestellt; Umbenennungen und Verschiebungen erfordern deine Freigabe."}},
+    {"@type": "Question", "name": "Ist Jinx auf dem Smartphone nutzbar?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, die Browseroberfläche ist für kleinere Bildschirme ausgelegt."}},
+    {"@type": "Question", "name": "Kann Jinx schon Rechnungen erstellen?", "acceptedAnswer": {"@type": "Answer", "text": "Noch nicht. Eine umfassende Rechnungsfunktion ist in Planung."}}
+  ]
+}
+</script>
+<style>
+  /* Alle Regeln sind auf .jinx-lp begrenzt, damit der Block auch in ein bestehendes Theme passt. */
+  .jinx-lp {
+    --jx-bg: #ffffff;
+    --jx-soft: #f3f6fb;
+    --jx-text: #1b2430;
+    --jx-muted: #556070;
+    --jx-accent: #1f5fd1;
+    --jx-accent-dark: #17489f;
+    --jx-line: #dde3ec;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--jx-text);
+    background: var(--jx-bg);
+    line-height: 1.6;
+    font-size: 17px;
+  }
+  .jinx-lp *, .jinx-lp *::before, .jinx-lp *::after { box-sizing: border-box; }
+  .jinx-lp .jx-wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  .jinx-lp section { padding: 64px 0; }
+  .jinx-lp h1, .jinx-lp h2, .jinx-lp h3 { line-height: 1.25; margin: 0 0 16px; color: var(--jx-text); overflow-wrap: break-word; hyphens: auto; }
+  .jinx-lp h1 { font-size: clamp(1.9rem, 4.5vw, 2.8rem); }
+  .jinx-lp h2 { font-size: clamp(1.45rem, 3vw, 1.95rem); }
+  .jinx-lp h3 { font-size: 1.1rem; }
+  .jinx-lp p { margin: 0 0 16px; }
+  .jinx-lp .jx-lead { font-size: 1.15rem; color: var(--jx-muted); max-width: 720px; }
+  .jinx-lp .jx-btn {
+    display: inline-block; background: var(--jx-accent); color: #fff; text-decoration: none;
+    font-weight: 600; padding: 14px 28px; border-radius: 8px; transition: background .15s;
+  }
+  .jinx-lp .jx-btn:hover, .jinx-lp .jx-btn:focus { background: var(--jx-accent-dark); color: #fff; }
+
+  .jinx-lp .jx-hero { background: linear-gradient(160deg, #eaf1fd 0%, #ffffff 70%); padding: 88px 0 72px; }
+  .jinx-lp .jx-eyebrow { font-weight: 600; color: var(--jx-accent); letter-spacing: .02em; margin-bottom: 12px; }
+  .jinx-lp .jx-claim { font-size: clamp(1.2rem, 2.6vw, 1.5rem); font-weight: 600; margin-bottom: 16px; }
+
+  .jinx-lp .jx-soft { background: var(--jx-soft); }
+  .jinx-lp .jx-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 28px; }
+  .jinx-lp .jx-card { background: #fff; border: 1px solid var(--jx-line); border-radius: 12px; padding: 24px; }
+  .jinx-lp .jx-card p { margin: 0; color: var(--jx-muted); }
+
+  .jinx-lp .jx-checks { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 12px; }
+  .jinx-lp .jx-checks li { padding-left: 32px; position: relative; }
+  .jinx-lp .jx-checks li::before {
+    content: "✓"; position: absolute; left: 0; top: 0; width: 22px; height: 22px; border-radius: 50%;
+    background: var(--jx-accent); color: #fff; font-size: 13px; line-height: 22px; text-align: center; font-weight: 700;
+  }
+
+  .jinx-lp .jx-planned { border-left: 4px solid var(--jx-line); padding-left: 20px; color: var(--jx-muted); }
+  .jinx-lp .jx-tag {
+    display: inline-block; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em;
+    background: #fff4d6; color: #7a5a00; border-radius: 4px; padding: 2px 8px; margin-bottom: 10px;
+  }
+
+  .jinx-lp .jx-cta { background: var(--jx-text); color: #fff; text-align: center; }
+  .jinx-lp .jx-cta h2 { color: #fff; }
+  .jinx-lp .jx-cta p { color: #c9d2de; max-width: 640px; margin-left: auto; margin-right: auto; margin-bottom: 28px; }
+
+  .jinx-lp details { border-bottom: 1px solid var(--jx-line); padding: 18px 0; }
+  .jinx-lp summary { cursor: pointer; font-weight: 600; list-style: none; position: relative; padding-right: 32px; }
+  .jinx-lp summary::-webkit-details-marker { display: none; }
+  .jinx-lp summary::after { content: "+"; position: absolute; right: 4px; top: -2px; font-size: 1.4rem; color: var(--jx-accent); }
+  .jinx-lp details[open] summary::after { content: "–"; }
+  .jinx-lp details p { margin: 12px 0 0; color: var(--jx-muted); }
+
+  @media (max-width: 600px) {
+    .jinx-lp { font-size: 16px; }
+    .jinx-lp section { padding: 48px 0; }
+    .jinx-lp .jx-hero { padding: 56px 0 48px; }
+    .jinx-lp .jx-btn { display: block; text-align: center; }
+  }
+</style>
+</head>
+<body style="margin:0">
+<main class="jinx-lp">
+
+  <section class="jx-hero">
+    <div class="jx-wrap">
+      <p class="jx-eyebrow">Jinx von Fix it IT</p>
+      <h1>KI-Dokumentenmanagement für Startups – mit Jinx einfacher arbeiten</h1>
+      <p class="jx-claim">Deine Ideen brauchen Zeit. Nicht dein Papierkram.</p>
+      <p class="jx-lead">Jinx ist deine KI-gestützte Dokumentenplattform für Startups und kleine Unternehmen. Geschäftsdokumente zentral ablegen, Informationen finden und Fragen zu eigenen Unterlagen stellen – mit nachvollziehbaren Quellen.</p>
+      <p><a class="jx-btn" href="#demo">Jinx-Demo anfragen</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="jx-wrap">
+      <h2>Weniger Verwaltungsaufwand, mehr Zeit fürs Wachstum</h2>
+      <p class="jx-lead">Wer ein Startup gründet, hat selten ein großes Backoffice. Angebote, Verträge, Rechnungen und andere Dokumente landen schnell in unterschiedlichen Ordnern. Jinx unterstützt dich dabei, Informationen zu erfassen, Unterlagen wiederzufinden und eine nachvollziehbare Dokumentenstruktur aufzubauen. So bleibt mehr Zeit für Kunden, Produktentwicklung und Wachstum.</p>
+    </div>
+  </section>
+
+  <section class="jx-soft">
+    <div class="jx-wrap">
+      <h2>Was Jinx heute für dein Startup kann</h2>
+      <div class="jx-grid">
+        <div class="jx-card"><h3>Dokumente intelligent durchsuchen</h3><p>Finde Unterlagen nach Inhalt, Absender, Datum oder Referenznummer.</p></div>
+        <div class="jx-card"><h3>Fragen zu Dokumenten stellen</h3><p>Jinx liefert Antworten mit Dokument-, Seiten- und Textquellen. Widersprüche werden gekennzeichnet.</p></div>
+        <div class="jx-card"><h3>Dateien strukturiert ablegen</h3><p>Vorschläge für Dateinamen und Ordner werden erst nach deiner Freigabe umgesetzt.</p></div>
+        <div class="jx-card"><h3>Scans verarbeiten</h3><p>OCR und Analyse erschließen Inhalte eingescannter Dokumente.</p></div>
+        <div class="jx-card"><h3>Duplikate prüfen</h3><p>Doppelte Dateien werden erkannt. Jinx löscht sie nicht automatisch.</p></div>
+        <div class="jx-card"><h3>Zugriff kontrollieren</h3><p>Rollen, Berechtigungen und Zwei-Faktor-Anmeldung für Administratoren unterstützen die Verwaltung.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="jx-wrap">
+      <h2>KI mit Kontrolle über deine Geschäftsdaten</h2>
+      <ul class="jx-checks">
+        <li>Das Sprachmodell arbeitet lokal. Dokumentinhalte werden für die KI-Verarbeitung nicht an externe KI-Dienste gesendet.</li>
+        <li>Originaldateien werden verschlüsselt und unverändert abgelegt.</li>
+        <li>Änderungen sind protokolliert und können zurückgenommen werden.</li>
+        <li>Werkzeuge für Auskunft, Aufbewahrung und die Freigabe von Löschanträgen.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="jx-soft">
+    <div class="jx-wrap">
+      <h2>Auch für wachsende Teams</h2>
+      <p class="jx-lead">Jinx ist über den Browser und auf dem Smartphone nutzbar. Benutzerrollen und getrennte Kundenbereiche unterstützen die Arbeit in Teams.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="jx-wrap">
+      <h2>Was als Nächstes geplant ist</h2>
+      <div class="jx-planned">
+        <span class="jx-tag">In Planung</span>
+        <p>Wir entwickeln Jinx weiter. Geplant sind unter anderem eine Projektverwaltung mit Aufgaben, Budgets und Fristen, eine Berichtserstellung sowie Workflows für Eingangs- und Ausgangsrechnungen. Diese Funktionen sind noch nicht verfügbar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="jx-cta" id="demo">
+    <div class="jx-wrap">
+      <h2>Jinx kennenlernen</h2>
+      <p>Du möchtest deine Dokumentenverwaltung von Anfang an professionell aufstellen? Lass dir Jinx in einer Demo zeigen und prüfe, ob die Plattform zu den Abläufen deines Startups passt.</p>
+      <!-- TODO: Link auf das echte Kontakt- bzw. Demo-Formular setzen -->
+      <a class="jx-btn" href="https://fix-it-it.de/kontakt/">Demo anfragen</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="jx-wrap">
+      <h2>Häufige Fragen</h2>
+      <details><summary>Was ist Jinx?</summary><p>Jinx ist eine KI-gestützte Dokumentenplattform von Fix it IT für kleine Unternehmen und Startups.</p></details>
+      <details><summary>Kann Jinx meine eigenen Dokumente durchsuchen?</summary><p>Ja. Jinx kann Inhalte erschließen und Fragen mit Quellenangaben beantworten.</p></details>
+      <details><summary>Löscht Jinx Dateien automatisch?</summary><p>Nein. Duplikate werden zur Prüfung bereitgestellt; Umbenennungen und Verschiebungen erfordern deine Freigabe.</p></details>
+      <details><summary>Ist Jinx auf dem Smartphone nutzbar?</summary><p>Ja, die Browseroberfläche ist für kleinere Bildschirme ausgelegt.</p></details>
+      <details><summary>Kann Jinx schon Rechnungen erstellen?</summary><p>Noch nicht. Eine umfassende Rechnungsfunktion ist in Planung.</p></details>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>
