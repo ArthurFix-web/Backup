@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif">
+  <title>Jinx Ablagevorschlag mit Freigabe – Beispielansicht mit fiktiven Demo-Daten</title>
+  <rect x="0.5" y="0.5" width="799" height="459" rx="14" fill="#ffffff" stroke="#dde3ec"/>
+  <path d="M14 0.5h772a13.5 13.5 0 0 1 13.5 13.5v26h-799v-26A13.5 13.5 0 0 1 14 0.5z" fill="#f3f6fb"/>
+  <circle cx="24" cy="20" r="5" fill="#e5675b"/><circle cx="42" cy="20" r="5" fill="#e8b84a"/><circle cx="60" cy="20" r="5" fill="#5cb85c"/>
+  <rect x="250" y="10" width="300" height="20" rx="10" fill="#ffffff" stroke="#dde3ec"/>
+  <text x="400" y="24" font-size="11" fill="#556070" text-anchor="middle">jinx · Ablage</text>
+  <line x1="0" y1="40" x2="800" y2="40" stroke="#dde3ec"/>
+  <text x="30" y="78" font-size="18" font-weight="700" fill="#1b2430">Ablagevorschlag</text>
+  <text x="30" y="100" font-size="12.5" fill="#556070">Jinx ändert nichts, bevor du freigibst.</text>
+  <rect x="30" y="118" width="740" height="176" rx="12" fill="#f3f6fb"/>
+  <text x="50" y="148" font-size="11" font-weight="600" fill="#556070">AKTUELL</text>
+  <text x="50" y="170" font-size="14" fill="#1b2430">Eingang/Scan_0042.pdf</text>
+  <path d="M60 186v22m-6-6 6 6 6-6" stroke="#1f5fd1" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="50" y="232" font-size="11" font-weight="600" fill="#556070">VORSCHLAG</text>
+  <text x="50" y="254" font-size="14" font-weight="600" fill="#1b2430">Angebote/2026/2026-03-14_Angebot_Beispiel-Druckerei_A-1187.pdf</text>
+  <text x="50" y="276" font-size="12" fill="#556070">Erkannt: Angebot · Absender Beispiel-Druckerei · Datum 14.03.2026 · Nr. A-1187</text>
+  <rect x="30" y="310" width="120" height="40" rx="8" fill="#1f5fd1"/>
+  <text x="90" y="335" font-size="13.5" font-weight="600" fill="#ffffff" text-anchor="middle">Freigeben</text>
+  <rect x="160" y="310" width="120" height="40" rx="8" fill="#ffffff" stroke="#dde3ec"/>
+  <text x="220" y="335" font-size="13.5" fill="#1b2430" text-anchor="middle">Bearbeiten</text>
+  <rect x="290" y="310" width="120" height="40" rx="8" fill="#ffffff" stroke="#dde3ec"/>
+  <text x="350" y="335" font-size="13.5" fill="#1b2430" text-anchor="middle">Ablehnen</text>
+  <rect x="30" y="370" width="740" height="56" rx="10" fill="#fff4d6"/>
+  <text x="50" y="393" font-size="12.5" font-weight="600" fill="#7a5a00">Mögliches Duplikat</text>
+  <text x="50" y="412" font-size="12" fill="#7a5a00">Angebot_Druckerei_März.pdf hat denselben Inhalt. Zur Prüfung bereitgestellt – wird nicht automatisch gelöscht.</text>
+  <text x="790" y="452" font-size="9.5" fill="#8a94a3" text-anchor="end">Fiktive Demo-Daten</text>
+</svg>

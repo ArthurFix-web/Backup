@@ -45,7 +45,7 @@
   .jinx-lp .jx-wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
   .jinx-lp section { padding: 64px 0; }
   .jinx-lp h1, .jinx-lp h2, .jinx-lp h3 { line-height: 1.25; margin: 0 0 16px; color: var(--jx-text); overflow-wrap: break-word; hyphens: auto; }
-  .jinx-lp h1 { font-size: clamp(1.9rem, 4.5vw, 2.8rem); }
+  .jinx-lp h1 { font-size: clamp(1.75rem, 3.4vw, 2.5rem); }
   .jinx-lp h2 { font-size: clamp(1.45rem, 3vw, 1.95rem); }
   .jinx-lp h3 { font-size: 1.1rem; }
   .jinx-lp p { margin: 0 0 16px; }
@@ -59,6 +59,14 @@
   .jinx-lp .jx-hero { background: linear-gradient(160deg, #eaf1fd 0%, #ffffff 70%); padding: 88px 0 72px; }
   .jinx-lp .jx-eyebrow { font-weight: 600; color: var(--jx-accent); letter-spacing: .02em; margin-bottom: 12px; }
   .jinx-lp .jx-claim { font-size: clamp(1.2rem, 2.6vw, 1.5rem); font-weight: 600; margin-bottom: 16px; }
+
+  .jinx-lp .jx-hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; }
+  .jinx-lp .jx-hero-grid > *, .jinx-lp .jx-shots > * { min-width: 0; }
+  .jinx-lp figure { margin: 0; }
+  .jinx-lp figure img { display: block; width: 100%; height: auto; border-radius: 14px; box-shadow: 0 12px 32px rgba(27, 36, 48, .12); }
+  .jinx-lp figcaption { font-size: .85rem; color: var(--jx-muted); margin-top: 10px; }
+  .jinx-lp .jx-shots { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 28px; }
+  .jinx-lp .jx-note { font-size: .85rem; color: var(--jx-muted); margin-top: 20px; }
 
   .jinx-lp .jx-soft { background: var(--jx-soft); }
   .jinx-lp .jx-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 28px; }
@@ -95,18 +103,27 @@
     .jinx-lp .jx-hero { padding: 56px 0 48px; }
     .jinx-lp .jx-btn { display: block; text-align: center; }
   }
+  @media (max-width: 860px) {
+    .jinx-lp .jx-hero-grid, .jinx-lp .jx-shots { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body style="margin:0">
 <main class="jinx-lp">
 
   <section class="jx-hero">
-    <div class="jx-wrap">
-      <p class="jx-eyebrow">Jinx von Fix it IT</p>
-      <h1>KI-Dokumentenmanagement für Startups – mit Jinx einfacher arbeiten</h1>
-      <p class="jx-claim">Deine Ideen brauchen Zeit. Nicht dein Papierkram.</p>
-      <p class="jx-lead">Jinx ist deine KI-gestützte Dokumentenplattform für Startups und kleine Unternehmen. Geschäftsdokumente zentral ablegen, Informationen finden und Fragen zu eigenen Unterlagen stellen – mit nachvollziehbaren Quellen.</p>
-      <p><a class="jx-btn" href="#demo">Jinx-Demo anfragen</a></p>
+    <div class="jx-wrap jx-hero-grid">
+      <div>
+        <p class="jx-eyebrow">Jinx von Fix it IT</p>
+        <h1>KI-Dokumenten&shy;management für Startups – mit Jinx einfacher arbeiten</h1>
+        <p class="jx-claim">Deine Ideen brauchen Zeit. Nicht dein Papierkram.</p>
+        <p class="jx-lead">Jinx ist deine KI-gestützte Dokumentenplattform für Startups und kleine Unternehmen. Geschäftsdokumente zentral ablegen, Informationen finden und Fragen zu eigenen Unterlagen stellen – mit nachvollziehbaren Quellen.</p>
+        <p><a class="jx-btn" href="#demo">Jinx-Demo anfragen</a></p>
+      </div>
+      <figure>
+        <img src="images/jinx-demo-dokumentenchat.svg" width="800" height="520" alt="Jinx-Dokumentenchat: Antwort auf die Frage nach dem Ende eines Mietvertrags mit Quellenangabe und markiertem Widerspruch" fetchpriority="high">
+        <figcaption>Dokumentenchat mit Quellen – Beispielansicht mit fiktiven Demo-Daten</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -133,6 +150,23 @@
 
   <section>
     <div class="jx-wrap">
+      <h2>So sieht Jinx im Alltag aus</h2>
+      <div class="jx-shots">
+        <figure>
+          <img src="images/jinx-demo-suche.svg" width="800" height="460" loading="lazy" alt="Jinx-Suche: Treffer für Rechnungen eines Absenders, gefiltert nach Absender und Datum, inklusive per OCR erkanntem Scan">
+          <figcaption>Dokumente nach Inhalt, Absender und Datum finden</figcaption>
+        </figure>
+        <figure>
+          <img src="images/jinx-demo-ablage.svg" width="800" height="460" loading="lazy" alt="Jinx-Ablagevorschlag: neuer Dateiname und Ordner für einen Scan mit Freigabe-Button und Hinweis auf ein mögliches Duplikat">
+          <figcaption>Ablagevorschlag mit Freigabe und Duplikat-Hinweis</figcaption>
+        </figure>
+      </div>
+      <p class="jx-note">Alle Ansichten zeigen fiktive Demo-Daten.</p>
+    </div>
+  </section>
+
+  <section class="jx-soft">
+    <div class="jx-wrap">
       <h2>KI mit Kontrolle über deine Geschäftsdaten</h2>
       <ul class="jx-checks">
         <li>Das Sprachmodell arbeitet lokal. Dokumentinhalte werden für die KI-Verarbeitung nicht an externe KI-Dienste gesendet.</li>
@@ -143,14 +177,14 @@
     </div>
   </section>
 
-  <section class="jx-soft">
+  <section>
     <div class="jx-wrap">
       <h2>Auch für wachsende Teams</h2>
       <p class="jx-lead">Jinx ist über den Browser und auf dem Smartphone nutzbar. Benutzerrollen und getrennte Kundenbereiche unterstützen die Arbeit in Teams.</p>
     </div>
   </section>
 
-  <section>
+  <section class="jx-soft">
     <div class="jx-wrap">
       <h2>Was als Nächstes geplant ist</h2>
       <div class="jx-planned">
