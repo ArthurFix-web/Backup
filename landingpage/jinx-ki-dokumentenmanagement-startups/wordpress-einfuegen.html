@@ -1,0 +1,189 @@
+<!-- Jinx-Landingpage: kompletten Inhalt in einen Block "Individuelles HTML" auf der Seite /jinx einfügen -->
+<style>
+  /* Alle Regeln sind auf .jinx-lp begrenzt, damit der Block auch in ein bestehendes Theme passt. */
+  .jinx-lp {
+    --jx-bg: #ffffff;
+    --jx-soft: #f3f6fb;
+    --jx-text: #1b2430;
+    --jx-muted: #556070;
+    --jx-accent: #1f5fd1;
+    --jx-accent-dark: #17489f;
+    --jx-line: #dde3ec;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--jx-text);
+    background: var(--jx-bg);
+    line-height: 1.6;
+    font-size: 17px;
+  }
+  .jinx-lp *, .jinx-lp *::before, .jinx-lp *::after { box-sizing: border-box; }
+  .jinx-lp .jx-wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  .jinx-lp section { padding: 64px 0; }
+  .jinx-lp h1, .jinx-lp h2, .jinx-lp h3 { line-height: 1.25; margin: 0 0 16px; color: var(--jx-text); overflow-wrap: break-word; hyphens: auto; }
+  .jinx-lp h1 { font-size: clamp(1.75rem, 3.4vw, 2.5rem); }
+  .jinx-lp h2 { font-size: clamp(1.45rem, 3vw, 1.95rem); }
+  .jinx-lp h3 { font-size: 1.1rem; }
+  .jinx-lp p { margin: 0 0 16px; }
+  .jinx-lp .jx-lead { font-size: 1.15rem; color: var(--jx-muted); max-width: 720px; }
+  .jinx-lp .jx-btn {
+    display: inline-block; background: var(--jx-accent); color: #fff; text-decoration: none;
+    font-weight: 600; padding: 14px 28px; border-radius: 8px; transition: background .15s;
+  }
+  .jinx-lp .jx-btn:hover, .jinx-lp .jx-btn:focus { background: var(--jx-accent-dark); color: #fff; }
+
+  .jinx-lp .jx-hero { background: linear-gradient(160deg, #eaf1fd 0%, #ffffff 70%); padding: 88px 0 72px; }
+  .jinx-lp .jx-eyebrow { font-weight: 600; color: var(--jx-accent); letter-spacing: .02em; margin-bottom: 12px; }
+  .jinx-lp .jx-claim { font-size: clamp(1.2rem, 2.6vw, 1.5rem); font-weight: 600; margin-bottom: 16px; }
+
+  .jinx-lp .jx-hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; }
+  .jinx-lp .jx-hero-grid > *, .jinx-lp .jx-shots > * { min-width: 0; }
+  .jinx-lp figure { margin: 0; }
+  .jinx-lp figure img { display: block; width: 100%; height: auto; border-radius: 14px; box-shadow: 0 12px 32px rgba(27, 36, 48, .12); }
+  .jinx-lp figcaption { font-size: .85rem; color: var(--jx-muted); margin-top: 10px; }
+  .jinx-lp .jx-shots { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 28px; }
+  .jinx-lp .jx-note { font-size: .85rem; color: var(--jx-muted); margin-top: 20px; }
+
+  .jinx-lp .jx-soft { background: var(--jx-soft); }
+  .jinx-lp .jx-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 28px; }
+  .jinx-lp .jx-card { background: #fff; border: 1px solid var(--jx-line); border-radius: 12px; padding: 24px; }
+  .jinx-lp .jx-card p { margin: 0; color: var(--jx-muted); }
+
+  .jinx-lp .jx-checks { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 12px; }
+  .jinx-lp .jx-checks li { padding-left: 32px; position: relative; }
+  .jinx-lp .jx-checks li::before {
+    content: "✓"; position: absolute; left: 0; top: 0; width: 22px; height: 22px; border-radius: 50%;
+    background: var(--jx-accent); color: #fff; font-size: 13px; line-height: 22px; text-align: center; font-weight: 700;
+  }
+
+  .jinx-lp .jx-planned { border-left: 4px solid var(--jx-line); padding-left: 20px; color: var(--jx-muted); }
+  .jinx-lp .jx-tag {
+    display: inline-block; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em;
+    background: #fff4d6; color: #7a5a00; border-radius: 4px; padding: 2px 8px; margin-bottom: 10px;
+  }
+
+  .jinx-lp .jx-cta { background: var(--jx-text); color: #fff; text-align: center; }
+  .jinx-lp .jx-cta h2 { color: #fff; }
+  .jinx-lp .jx-cta p { color: #c9d2de; max-width: 640px; margin-left: auto; margin-right: auto; margin-bottom: 28px; }
+
+  .jinx-lp details { border-bottom: 1px solid var(--jx-line); padding: 18px 0; }
+  .jinx-lp summary { cursor: pointer; font-weight: 600; list-style: none; position: relative; padding-right: 32px; }
+  .jinx-lp summary::-webkit-details-marker { display: none; }
+  .jinx-lp summary::after { content: "+"; position: absolute; right: 4px; top: -2px; font-size: 1.4rem; color: var(--jx-accent); }
+  .jinx-lp details[open] summary::after { content: "–"; }
+  .jinx-lp details p { margin: 12px 0 0; color: var(--jx-muted); }
+
+  @media (max-width: 600px) {
+    .jinx-lp { font-size: 16px; }
+    .jinx-lp section { padding: 48px 0; }
+    .jinx-lp .jx-hero { padding: 56px 0 48px; }
+    .jinx-lp .jx-btn { display: block; text-align: center; }
+  }
+  @media (max-width: 860px) {
+    .jinx-lp .jx-hero-grid, .jinx-lp .jx-shots { grid-template-columns: 1fr; }
+  }
+</style>
+<main class="jinx-lp">
+
+  <section class="jx-hero">
+    <div class="jx-wrap jx-hero-grid">
+      <div>
+        <p class="jx-eyebrow">Jinx von Fix it IT</p>
+        <h1>KI-Dokumenten&shy;management für Startups – mit Jinx einfacher arbeiten</h1>
+        <p class="jx-claim">Deine Ideen brauchen Zeit. Nicht dein Papierkram.</p>
+        <p class="jx-lead">Jinx ist deine KI-gestützte Dokumentenplattform für Startups und kleine Unternehmen. Geschäftsdokumente zentral ablegen, Informationen finden und Fragen zu eigenen Unterlagen stellen – mit nachvollziehbaren Quellen.</p>
+        <p><a class="jx-btn" href="#demo">Jinx-Demo anfragen</a></p>
+      </div>
+      <figure>
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNTIwIiBmb250LWZhbWlseT0ic3lzdGVtLXVpLCAtYXBwbGUtc3lzdGVtLCBTZWdvZSBVSSwgUm9ib3RvLCBBcmlhbCwgc2Fucy1zZXJpZiI+CiAgPHRpdGxlPkppbnggRG9rdW1lbnRlbmNoYXQg4oCTIEJlaXNwaWVsYW5zaWNodCBtaXQgZmlrdGl2ZW4gRGVtby1EYXRlbjwvdGl0bGU+CiAgPHJlY3QgeD0iMC41IiB5PSIwLjUiIHdpZHRoPSI3OTkiIGhlaWdodD0iNTE5IiByeD0iMTQiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2RkZTNlYyIvPgogIDxwYXRoIGQ9Ik0xNCAwLjVoNzcyYTEzLjUgMTMuNSAwIDAgMSAxMy41IDEzLjV2MjZoLTc5OXYtMjZBMTMuNSAxMy41IDAgMCAxIDE0IDAuNXoiIGZpbGw9IiNmM2Y2ZmIiLz4KICA8Y2lyY2xlIGN4PSIyNCIgY3k9IjIwIiByPSI1IiBmaWxsPSIjZTU2NzViIi8+PGNpcmNsZSBjeD0iNDIiIGN5PSIyMCIgcj0iNSIgZmlsbD0iI2U4Yjg0YSIvPjxjaXJjbGUgY3g9IjYwIiBjeT0iMjAiIHI9IjUiIGZpbGw9IiM1Y2I4NWMiLz4KICA8cmVjdCB4PSIyNTAiIHk9IjEwIiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwIiByeD0iMTAiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2RkZTNlYyIvPgogIDx0ZXh0IHg9IjQwMCIgeT0iMjQiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM1NTYwNzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPmppbnggwrcgRG9rdW1lbnRlbmNoYXQ8L3RleHQ+CiAgPGxpbmUgeDE9IjAiIHkxPSI0MCIgeDI9IjgwMCIgeTI9IjQwIiBzdHJva2U9IiNkZGUzZWMiLz4KICA8cmVjdCB4PSIwIiB5PSI0MC41IiB3aWR0aD0iMTgwIiBoZWlnaHQ9IjQ3OSIgZmlsbD0iI2Y4ZmFmZCIvPgogIDx0ZXh0IHg9IjIwIiB5PSI3MiIgZm9udC1zaXplPSIxNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzFmNWZkMSI+SmlueDwvdGV4dD4KICA8dGV4dCB4PSIyMCIgeT0iMTA4IiBmb250LXNpemU9IjEyIiBmaWxsPSIjNTU2MDcwIj5TdWNoZTwvdGV4dD4KICA8cmVjdCB4PSIxMCIgeT0iMTIyIiB3aWR0aD0iMTYwIiBoZWlnaHQ9IjI4IiByeD0iNiIgZmlsbD0iI2U2ZWVmYyIvPgogIDx0ZXh0IHg9IjIwIiB5PSIxNDAiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9IiMxZjVmZDEiPkRva3VtZW50ZW5jaGF0PC90ZXh0PgogIDx0ZXh0IHg9IjIwIiB5PSIxNzIiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1NTYwNzAiPkFibGFnZTwvdGV4dD4KICA8dGV4dCB4PSIyMCIgeT0iMjA0IiBmb250LXNpemU9IjEyIiBmaWxsPSIjNTU2MDcwIj5EdXBsaWthdGU8L3RleHQ+CiAgPHRleHQgeD0iMjAiIHk9IjIzNiIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzU1NjA3MCI+RWluc3RlbGx1bmdlbjwvdGV4dD4KICA8bGluZSB4MT0iMTgwIiB5MT0iNDAiIHgyPSIxODAiIHkyPSI1MjAiIHN0cm9rZT0iI2RkZTNlYyIvPgogIDxyZWN0IHg9IjQyMCIgeT0iNzAiIHdpZHRoPSIzNTAiIGhlaWdodD0iNDQiIHJ4PSIxMiIgZmlsbD0iIzFmNWZkMSIvPgogIDx0ZXh0IHg9IjQzOCIgeT0iOTciIGZvbnQtc2l6ZT0iMTMiIGZpbGw9IiNmZmZmZmYiPldhbm4gZW5kZXQgZGVyIE1pZXR2ZXJ0cmFnIGbDvHIgdW5zZXIgQsO8cm8/PC90ZXh0PgogIDxyZWN0IHg9IjIxMCIgeT0iMTM0IiB3aWR0aD0iNDkwIiBoZWlnaHQ9IjI1MCIgcng9IjEyIiBmaWxsPSIjZjNmNmZiIi8+CiAgPHRleHQgeD0iMjMwIiB5PSIxNjQiIGZvbnQtc2l6ZT0iMTMiIGZpbGw9IiMxYjI0MzAiPkRlciBNaWV0dmVydHJhZyBmw7xyIGRhcyBCw7xybyBpbiBkZXIgQmVpc3BpZWxzdHJhw59lIDEyIGVuZGV0PC90ZXh0PgogIDx0ZXh0IHg9IjIzMCIgeT0iMTg0IiBmb250LXNpemU9IjEzIiBmaWxsPSIjMWIyNDMwIj5hbSA8dHNwYW4gZm9udC13ZWlnaHQ9IjcwMCI+MzEuMTIuMjAyNzwvdHNwYW4+LiBEaWUgS8O8bmRpZ3VuZ3NmcmlzdCBiZXRyw6RndCA8dHNwYW4gZm9udC13ZWlnaHQ9IjcwMCI+NiBNb25hdGU8L3RzcGFuPi48L3RleHQ+CiAgPHRleHQgeD0iMjMwIiB5PSIyMTYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9IiM1NTYwNzAiPlFVRUxMRU48L3RleHQ+CiAgPHJlY3QgeD0iMjMwIiB5PSIyMjYiIHdpZHRoPSIyNTAiIGhlaWdodD0iMjYiIHJ4PSI2IiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiNkZGUzZWMiLz4KICA8dGV4dCB4PSIyNDIiIHk9IjI0MyIgZm9udC1zaXplPSIxMS41IiBmaWxsPSIjMWY1ZmQxIj5NaWV0dmVydHJhZ19CdWVyb18yMDI0LnBkZiDCtyBTLiAzPC90ZXh0PgogIDxyZWN0IHg9IjQ4OCIgeT0iMjI2IiB3aWR0aD0iMjA0IiBoZWlnaHQ9IjI2IiByeD0iNiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZGRlM2VjIi8+CiAgPHRleHQgeD0iNDk5IiB5PSIyNDMiIGZvbnQtc2l6ZT0iMTEuNSIgZmlsbD0iIzFmNWZkMSI+TWlldHZlcnRyYWdfQnVlcm9fMjAyNC5wZGYgwrcgUy4gNzwvdGV4dD4KICA8cmVjdCB4PSIyMzAiIHk9IjI2NCIgd2lkdGg9IjQ1MCIgaGVpZ2h0PSI1NiIgcng9IjYiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2RkZTNlYyIvPgogIDx0ZXh0IHg9IjI0MiIgeT0iMjg0IiBmb250LXNpemU9IjExLjUiIGZpbGw9IiM1NTYwNzAiIGZvbnQtc3R5bGU9Iml0YWxpYyI+4oCeRGFzIE1pZXR2ZXJow6RsdG5pcyBlbmRldCBhbSAzMS4xMi4yMDI3LCBzb2Zlcm4gZXMgbmljaHQ8L3RleHQ+CiAgPHRleHQgeD0iMjQyIiB5PSIzMDIiIGZvbnQtc2l6ZT0iMTEuNSIgZmlsbD0iIzU1NjA3MCIgZm9udC1zdHlsZT0iaXRhbGljIj51bnRlciBFaW5oYWx0dW5nIGVpbmVyIEZyaXN0IHZvbiBzZWNocyBNb25hdGVuIOKApuKAnDwvdGV4dD4KICA8cmVjdCB4PSIyMzAiIHk9IjMzMCIgd2lkdGg9IjQ1MCIgaGVpZ2h0PSI0MCIgcng9IjYiIGZpbGw9IiNmZmY0ZDYiLz4KICA8dGV4dCB4PSIyNDIiIHk9IjM0OCIgZm9udC1zaXplPSIxMS41IiBmb250LXdlaWdodD0iNjAwIiBmaWxsPSIjN2E1YTAwIj5XaWRlcnNwcnVjaCBlcmthbm50PC90ZXh0PgogIDx0ZXh0IHg9IjI0MiIgeT0iMzYzIiBmb250LXNpemU9IjExIiBmaWxsPSIjN2E1YTAwIj5OYWNodHJhZ18yMDI1LnBkZiwgUy4gMSBuZW5udCBlaW5lIEvDvG5kaWd1bmdzZnJpc3Qgdm9uIDMgTW9uYXRlbi48L3RleHQ+CiAgPHJlY3QgeD0iMjEwIiB5PSI0NTIiIHdpZHRoPSI1NjAiIGhlaWdodD0iNDAiIHJ4PSIyMCIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZGRlM2VjIi8+CiAgPHRleHQgeD0iMjMyIiB5PSI0NzciIGZvbnQtc2l6ZT0iMTIuNSIgZmlsbD0iIzhhOTRhMyI+RnJhZ2UgenUgZGVpbmVuIERva3VtZW50ZW4gc3RlbGxlbiDigKY8L3RleHQ+CiAgPGNpcmNsZSBjeD0iNzUwIiBjeT0iNDcyIiByPSIxNCIgZmlsbD0iIzFmNWZkMSIvPgogIDxwYXRoIGQ9Ik03NDQgNDcyaDExbS00LTQgNCA0LTQgNCIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDx0ZXh0IHg9Ijc5MCIgeT0iNTEyIiBmb250LXNpemU9IjkuNSIgZmlsbD0iIzhhOTRhMyIgdGV4dC1hbmNob3I9ImVuZCI+RmlrdGl2ZSBEZW1vLURhdGVuPC90ZXh0Pgo8L3N2Zz4K" width="800" height="520" alt="Jinx-Dokumentenchat: Antwort auf die Frage nach dem Ende eines Mietvertrags mit Quellenangabe und markiertem Widerspruch" fetchpriority="high">
+        <figcaption>Dokumentenchat mit Quellen – Beispielansicht mit fiktiven Demo-Daten</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="jx-wrap">
+      <h2>Weniger Verwaltungsaufwand, mehr Zeit fürs Wachstum</h2>
+      <p class="jx-lead">Wer ein Startup gründet, hat selten ein großes Backoffice. Angebote, Verträge, Rechnungen und andere Dokumente landen schnell in unterschiedlichen Ordnern. Jinx unterstützt dich dabei, Informationen zu erfassen, Unterlagen wiederzufinden und eine nachvollziehbare Dokumentenstruktur aufzubauen. So bleibt mehr Zeit für Kunden, Produktentwicklung und Wachstum.</p>
+    </div>
+  </section>
+
+  <section class="jx-soft">
+    <div class="jx-wrap">
+      <h2>Was Jinx heute für dein Startup kann</h2>
+      <div class="jx-grid">
+        <div class="jx-card"><h3>Dokumente intelligent durchsuchen</h3><p>Finde Unterlagen nach Inhalt, Absender, Datum oder Referenznummer.</p></div>
+        <div class="jx-card"><h3>Fragen zu Dokumenten stellen</h3><p>Jinx liefert Antworten mit Dokument-, Seiten- und Textquellen. Widersprüche werden gekennzeichnet.</p></div>
+        <div class="jx-card"><h3>Dateien strukturiert ablegen</h3><p>Vorschläge für Dateinamen und Ordner werden erst nach deiner Freigabe umgesetzt.</p></div>
+        <div class="jx-card"><h3>Scans verarbeiten</h3><p>OCR und Analyse erschließen Inhalte eingescannter Dokumente.</p></div>
+        <div class="jx-card"><h3>Duplikate prüfen</h3><p>Doppelte Dateien werden erkannt. Jinx löscht sie nicht automatisch.</p></div>
+        <div class="jx-card"><h3>Zugriff kontrollieren</h3><p>Rollen, Berechtigungen und Zwei-Faktor-Anmeldung für Administratoren unterstützen die Verwaltung.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="jx-wrap">
+      <h2>So sieht Jinx im Alltag aus</h2>
+      <div class="jx-shots">
+        <figure>
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNDYwIiBmb250LWZhbWlseT0ic3lzdGVtLXVpLCAtYXBwbGUtc3lzdGVtLCBTZWdvZSBVSSwgUm9ib3RvLCBBcmlhbCwgc2Fucy1zZXJpZiI+CiAgPHRpdGxlPkppbnggRG9rdW1lbnRlbnN1Y2hlIOKAkyBCZWlzcGllbGFuc2ljaHQgbWl0IGZpa3RpdmVuIERlbW8tRGF0ZW48L3RpdGxlPgogIDxyZWN0IHg9IjAuNSIgeT0iMC41IiB3aWR0aD0iNzk5IiBoZWlnaHQ9IjQ1OSIgcng9IjE0IiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiNkZGUzZWMiLz4KICA8cGF0aCBkPSJNMTQgMC41aDc3MmExMy41IDEzLjUgMCAwIDEgMTMuNSAxMy41djI2aC03OTl2LTI2QTEzLjUgMTMuNSAwIDAgMSAxNCAwLjV6IiBmaWxsPSIjZjNmNmZiIi8+CiAgPGNpcmNsZSBjeD0iMjQiIGN5PSIyMCIgcj0iNSIgZmlsbD0iI2U1Njc1YiIvPjxjaXJjbGUgY3g9IjQyIiBjeT0iMjAiIHI9IjUiIGZpbGw9IiNlOGI4NGEiLz48Y2lyY2xlIGN4PSI2MCIgY3k9IjIwIiByPSI1IiBmaWxsPSIjNWNiODVjIi8+CiAgPHJlY3QgeD0iMjUwIiB5PSIxMCIgd2lkdGg9IjMwMCIgaGVpZ2h0PSIyMCIgcng9IjEwIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiNkZGUzZWMiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjI0IiBmb250LXNpemU9IjExIiBmaWxsPSIjNTU2MDcwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5qaW54IMK3IFN1Y2hlPC90ZXh0PgogIDxsaW5lIHgxPSIwIiB5MT0iNDAiIHgyPSI4MDAiIHkyPSI0MCIgc3Ryb2tlPSIjZGRlM2VjIi8+CiAgPHJlY3QgeD0iMzAiIHk9IjY0IiB3aWR0aD0iNzQwIiBoZWlnaHQ9IjQ2IiByeD0iMTAiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iIzFmNWZkMSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8Y2lyY2xlIGN4PSI1NiIgY3k9Ijg2IiByPSI3IiBmaWxsPSJub25lIiBzdHJva2U9IiMxZjVmZDEiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik02MSA5MWw2IDYiIHN0cm9rZT0iIzFmNWZkMSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8dGV4dCB4PSI3OCIgeT0iOTIiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9IiMxYjI0MzAiPlJlY2hudW5nIEJlaXNwaWVsIEhvc3RpbmcgMjAyNjwvdGV4dD4KICA8ZyBmb250LXNpemU9IjEyIj4KICAgIDxyZWN0IHg9IjMwIiB5PSIxMjQiIHdpZHRoPSIxNTAiIGhlaWdodD0iMjgiIHJ4PSIxNCIgZmlsbD0iI2U2ZWVmYyIvPjx0ZXh0IHg9IjEwNSIgeT0iMTQyIiBmaWxsPSIjMWY1ZmQxIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5BYnNlbmRlcjogQmVpc3BpZWwgSG9zdGluZzwvdGV4dD4KICAgIDxyZWN0IHg9IjE5MCIgeT0iMTI0IiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjI4IiByeD0iMTQiIGZpbGw9IiNlNmVlZmMiLz48dGV4dCB4PSIyNTAiIHk9IjE0MiIgZmlsbD0iIzFmNWZkMSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+RGF0dW06IDIwMjY8L3RleHQ+CiAgICA8cmVjdCB4PSIzMjAiIHk9IjEyNCIgd2lkdGg9IjEzMCIgaGVpZ2h0PSIyOCIgcng9IjE0IiBmaWxsPSIjZjNmNmZiIi8+PHRleHQgeD0iMzg1IiB5PSIxNDIiIGZpbGw9IiM1NTYwNzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPisgUmVmZXJlbnpudW1tZXI8L3RleHQ+CiAgPC9nPgogIDx0ZXh0IHg9IjMwIiB5PSIxODQiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1NTYwNzAiPjMgVHJlZmZlcjwvdGV4dD4KICA8Zz4KICAgIDxyZWN0IHg9IjMwIiB5PSIxOTYiIHdpZHRoPSI3NDAiIGhlaWdodD0iNzAiIHJ4PSIxMCIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZGRlM2VjIi8+CiAgICA8cmVjdCB4PSI0NiIgeT0iMjEyIiB3aWR0aD0iMzAiIGhlaWdodD0iMzgiIHJ4PSI0IiBmaWxsPSIjZjNmNmZiIiBzdHJva2U9IiNkZGUzZWMiLz48dGV4dCB4PSI2MSIgeT0iMjM2IiBmb250LXNpemU9IjkiIGZpbGw9IiMxZjVmZDEiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI3MDAiPlBERjwvdGV4dD4KICAgIDx0ZXh0IHg9IjkyIiB5PSIyMjYiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9IiMxYjI0MzAiPjIwMjYtMDktMDFfUmVjaG51bmdfQmVpc3BpZWwtSG9zdGluZ19SRS0yMDQxOS5wZGY8L3RleHQ+CiAgICA8dGV4dCB4PSI5MiIgeT0iMjQ4IiBmb250LXNpemU9IjEyIiBmaWxsPSIjNTU2MDcwIj7igKYgV2ViaG9zdGluZyBQYWtldCBCdXNpbmVzcywgWmVpdHJhdW0gMDkvMjAyNiwgQmV0cmFnIDI5LDkwIOKCrCDigKY8L3RleHQ+CiAgICA8dGV4dCB4PSI3NTQiIHk9IjIyNiIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzU1NjA3MCIgdGV4dC1hbmNob3I9ImVuZCI+MDEuMDkuMjAyNjwvdGV4dD4KICA8L2c+CiAgPGc+CiAgICA8cmVjdCB4PSIzMCIgeT0iMjc2IiB3aWR0aD0iNzQwIiBoZWlnaHQ9IjcwIiByeD0iMTAiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2RkZTNlYyIvPgogICAgPHJlY3QgeD0iNDYiIHk9IjI5MiIgd2lkdGg9IjMwIiBoZWlnaHQ9IjM4IiByeD0iNCIgZmlsbD0iI2YzZjZmYiIgc3Ryb2tlPSIjZGRlM2VjIi8+PHRleHQgeD0iNjEiIHk9IjMxNiIgZm9udC1zaXplPSI5IiBmaWxsPSIjMWY1ZmQxIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5QREY8L3RleHQ+CiAgICA8dGV4dCB4PSI5MiIgeT0iMzA2IiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iNjAwIiBmaWxsPSIjMWIyNDMwIj4yMDI2LTA4LTAxX1JlY2hudW5nX0JlaXNwaWVsLUhvc3RpbmdfUkUtMjAzMTEucGRmPC90ZXh0PgogICAgPHRleHQgeD0iOTIiIHk9IjMyOCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzU1NjA3MCI+4oCmIFdlYmhvc3RpbmcgUGFrZXQgQnVzaW5lc3MsIFplaXRyYXVtIDA4LzIwMjYsIEJldHJhZyAyOSw5MCDigqwg4oCmPC90ZXh0PgogICAgPHRleHQgeD0iNzU0IiB5PSIzMDYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1NTYwNzAiIHRleHQtYW5jaG9yPSJlbmQiPjAxLjA4LjIwMjY8L3RleHQ+CiAgPC9nPgogIDxnPgogICAgPHJlY3QgeD0iMzAiIHk9IjM1NiIgd2lkdGg9Ijc0MCIgaGVpZ2h0PSI3MCIgcng9IjEwIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiNkZGUzZWMiLz4KICAgIDxyZWN0IHg9IjQ2IiB5PSIzNzIiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzOCIgcng9IjQiIGZpbGw9IiNmM2Y2ZmIiIHN0cm9rZT0iI2RkZTNlYyIvPjx0ZXh0IHg9IjYxIiB5PSIzOTYiIGZvbnQtc2l6ZT0iOSIgZmlsbD0iIzFmNWZkMSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjcwMCI+U0NBTjwvdGV4dD4KICAgIDx0ZXh0IHg9IjkyIiB5PSIzODYiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9IiMxYjI0MzAiPlNjYW5fMjAyNi0wMi0xNC5wZGY8L3RleHQ+CiAgICA8dGV4dCB4PSI5MiIgeT0iNDA4IiBmb250LXNpemU9IjEyIiBmaWxsPSIjNTU2MDcwIj7igKYgcGVyIE9DUiBlcmthbm50OiBWZXJ0cmFnc2Jlc3TDpHRpZ3VuZyBCZWlzcGllbCBIb3N0aW5nLCBLdW5kZW5uci4gSy01NTIxIOKApjwvdGV4dD4KICAgIDx0ZXh0IHg9Ijc1NCIgeT0iMzg2IiBmb250LXNpemU9IjEyIiBmaWxsPSIjNTU2MDcwIiB0ZXh0LWFuY2hvcj0iZW5kIj4xNC4wMi4yMDI2PC90ZXh0PgogIDwvZz4KICA8dGV4dCB4PSI3OTAiIHk9IjQ1MiIgZm9udC1zaXplPSI5LjUiIGZpbGw9IiM4YTk0YTMiIHRleHQtYW5jaG9yPSJlbmQiPkZpa3RpdmUgRGVtby1EYXRlbjwvdGV4dD4KPC9zdmc+Cg==" width="800" height="460" loading="lazy" alt="Jinx-Suche: Treffer für Rechnungen eines Absenders, gefiltert nach Absender und Datum, inklusive per OCR erkanntem Scan">
+          <figcaption>Dokumente nach Inhalt, Absender und Datum finden</figcaption>
+        </figure>
+        <figure>
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNDYwIiBmb250LWZhbWlseT0ic3lzdGVtLXVpLCAtYXBwbGUtc3lzdGVtLCBTZWdvZSBVSSwgUm9ib3RvLCBBcmlhbCwgc2Fucy1zZXJpZiI+CiAgPHRpdGxlPkppbnggQWJsYWdldm9yc2NobGFnIG1pdCBGcmVpZ2FiZSDigJMgQmVpc3BpZWxhbnNpY2h0IG1pdCBmaWt0aXZlbiBEZW1vLURhdGVuPC90aXRsZT4KICA8cmVjdCB4PSIwLjUiIHk9IjAuNSIgd2lkdGg9Ijc5OSIgaGVpZ2h0PSI0NTkiIHJ4PSIxNCIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZGRlM2VjIi8+CiAgPHBhdGggZD0iTTE0IDAuNWg3NzJhMTMuNSAxMy41IDAgMCAxIDEzLjUgMTMuNXYyNmgtNzk5di0yNkExMy41IDEzLjUgMCAwIDEgMTQgMC41eiIgZmlsbD0iI2YzZjZmYiIvPgogIDxjaXJjbGUgY3g9IjI0IiBjeT0iMjAiIHI9IjUiIGZpbGw9IiNlNTY3NWIiLz48Y2lyY2xlIGN4PSI0MiIgY3k9IjIwIiByPSI1IiBmaWxsPSIjZThiODRhIi8+PGNpcmNsZSBjeD0iNjAiIGN5PSIyMCIgcj0iNSIgZmlsbD0iIzVjYjg1YyIvPgogIDxyZWN0IHg9IjI1MCIgeT0iMTAiIHdpZHRoPSIzMDAiIGhlaWdodD0iMjAiIHJ4PSIxMCIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZGRlM2VjIi8+CiAgPHRleHQgeD0iNDAwIiB5PSIyNCIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzU1NjA3MCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+amlueCDCtyBBYmxhZ2U8L3RleHQ+CiAgPGxpbmUgeDE9IjAiIHkxPSI0MCIgeDI9IjgwMCIgeTI9IjQwIiBzdHJva2U9IiNkZGUzZWMiLz4KICA8dGV4dCB4PSIzMCIgeT0iNzgiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMxYjI0MzAiPkFibGFnZXZvcnNjaGxhZzwvdGV4dD4KICA8dGV4dCB4PSIzMCIgeT0iMTAwIiBmb250LXNpemU9IjEyLjUiIGZpbGw9IiM1NTYwNzAiPkppbnggw6RuZGVydCBuaWNodHMsIGJldm9yIGR1IGZyZWlnaWJzdC48L3RleHQ+CiAgPHJlY3QgeD0iMzAiIHk9IjExOCIgd2lkdGg9Ijc0MCIgaGVpZ2h0PSIxNzYiIHJ4PSIxMiIgZmlsbD0iI2YzZjZmYiIvPgogIDx0ZXh0IHg9IjUwIiB5PSIxNDgiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9IiM1NTYwNzAiPkFLVFVFTEw8L3RleHQ+CiAgPHRleHQgeD0iNTAiIHk9IjE3MCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzFiMjQzMCI+RWluZ2FuZy9TY2FuXzAwNDIucGRmPC90ZXh0PgogIDxwYXRoIGQ9Ik02MCAxODZ2MjJtLTYtNiA2IDYgNi02IiBzdHJva2U9IiMxZjVmZDEiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CiAgPHRleHQgeD0iNTAiIHk9IjIzMiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iIzU1NjA3MCI+Vk9SU0NITEFHPC90ZXh0PgogIDx0ZXh0IHg9IjUwIiB5PSIyNTQiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9IiMxYjI0MzAiPkFuZ2Vib3RlLzIwMjYvMjAyNi0wMy0xNF9BbmdlYm90X0JlaXNwaWVsLURydWNrZXJlaV9BLTExODcucGRmPC90ZXh0PgogIDx0ZXh0IHg9IjUwIiB5PSIyNzYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM1NTYwNzAiPkVya2FubnQ6IEFuZ2Vib3QgwrcgQWJzZW5kZXIgQmVpc3BpZWwtRHJ1Y2tlcmVpIMK3IERhdHVtIDE0LjAzLjIwMjYgwrcgTnIuIEEtMTE4NzwvdGV4dD4KICA8cmVjdCB4PSIzMCIgeT0iMzEwIiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiByeD0iOCIgZmlsbD0iIzFmNWZkMSIvPgogIDx0ZXh0IHg9IjkwIiB5PSIzMzUiIGZvbnQtc2l6ZT0iMTMuNSIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iI2ZmZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+RnJlaWdlYmVuPC90ZXh0PgogIDxyZWN0IHg9IjE2MCIgeT0iMzEwIiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiByeD0iOCIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZGRlM2VjIi8+CiAgPHRleHQgeD0iMjIwIiB5PSIzMzUiIGZvbnQtc2l6ZT0iMTMuNSIgZmlsbD0iIzFiMjQzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+QmVhcmJlaXRlbjwvdGV4dD4KICA8cmVjdCB4PSIyOTAiIHk9IjMxMCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSI0MCIgcng9IjgiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2RkZTNlYyIvPgogIDx0ZXh0IHg9IjM1MCIgeT0iMzM1IiBmb250LXNpemU9IjEzLjUiIGZpbGw9IiMxYjI0MzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkFibGVobmVuPC90ZXh0PgogIDxyZWN0IHg9IjMwIiB5PSIzNzAiIHdpZHRoPSI3NDAiIGhlaWdodD0iNTYiIHJ4PSIxMCIgZmlsbD0iI2ZmZjRkNiIvPgogIDx0ZXh0IHg9IjUwIiB5PSIzOTMiIGZvbnQtc2l6ZT0iMTIuNSIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iIzdhNWEwMCI+TcO2Z2xpY2hlcyBEdXBsaWthdDwvdGV4dD4KICA8dGV4dCB4PSI1MCIgeT0iNDEyIiBmb250LXNpemU9IjEyIiBmaWxsPSIjN2E1YTAwIj5BbmdlYm90X0RydWNrZXJlaV9Nw6Ryei5wZGYgaGF0IGRlbnNlbGJlbiBJbmhhbHQuIFp1ciBQcsO8ZnVuZyBiZXJlaXRnZXN0ZWxsdCDigJMgd2lyZCBuaWNodCBhdXRvbWF0aXNjaCBnZWzDtnNjaHQuPC90ZXh0PgogIDx0ZXh0IHg9Ijc5MCIgeT0iNDUyIiBmb250LXNpemU9IjkuNSIgZmlsbD0iIzhhOTRhMyIgdGV4dC1hbmNob3I9ImVuZCI+RmlrdGl2ZSBEZW1vLURhdGVuPC90ZXh0Pgo8L3N2Zz4K" width="800" height="460" loading="lazy" alt="Jinx-Ablagevorschlag: neuer Dateiname und Ordner für einen Scan mit Freigabe-Button und Hinweis auf ein mögliches Duplikat">
+          <figcaption>Ablagevorschlag mit Freigabe und Duplikat-Hinweis</figcaption>
+        </figure>
+      </div>
+      <p class="jx-note">Alle Ansichten zeigen fiktive Demo-Daten.</p>
+    </div>
+  </section>
+
+  <section class="jx-soft">
+    <div class="jx-wrap">
+      <h2>KI mit Kontrolle über deine Geschäftsdaten</h2>
+      <ul class="jx-checks">
+        <li>Das Sprachmodell arbeitet lokal. Dokumentinhalte werden für die KI-Verarbeitung nicht an externe KI-Dienste gesendet.</li>
+        <li>Originaldateien werden verschlüsselt und unverändert abgelegt.</li>
+        <li>Änderungen sind protokolliert und können zurückgenommen werden.</li>
+        <li>Werkzeuge für Auskunft, Aufbewahrung und die Freigabe von Löschanträgen.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="jx-wrap">
+      <h2>Auch für wachsende Teams</h2>
+      <p class="jx-lead">Jinx ist über den Browser und auf dem Smartphone nutzbar. Benutzerrollen und getrennte Kundenbereiche unterstützen die Arbeit in Teams.</p>
+    </div>
+  </section>
+
+  <section class="jx-soft">
+    <div class="jx-wrap">
+      <h2>Was als Nächstes geplant ist</h2>
+      <div class="jx-planned">
+        <span class="jx-tag">In Planung</span>
+        <p>Wir entwickeln Jinx weiter. Geplant sind unter anderem eine Projektverwaltung mit Aufgaben, Budgets und Fristen, eine Berichtserstellung sowie Workflows für Eingangs- und Ausgangsrechnungen. Diese Funktionen sind noch nicht verfügbar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="jx-cta" id="demo">
+    <div class="jx-wrap">
+      <h2>Jinx kennenlernen</h2>
+      <p>Du möchtest deine Dokumentenverwaltung von Anfang an professionell aufstellen? Lass dir Jinx in einer Demo zeigen und prüfe, ob die Plattform zu den Abläufen deines Startups passt.</p>
+      <!-- TODO: Link auf das echte Kontakt- bzw. Demo-Formular setzen -->
+      <a class="jx-btn" href="https://fix-it-it.de/kontakt/">Demo anfragen</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="jx-wrap">
+      <h2>Häufige Fragen</h2>
+      <details><summary>Was ist Jinx?</summary><p>Jinx ist eine KI-gestützte Dokumentenplattform von Fix it IT für kleine Unternehmen und Startups.</p></details>
+      <details><summary>Kann Jinx meine eigenen Dokumente durchsuchen?</summary><p>Ja. Jinx kann Inhalte erschließen und Fragen mit Quellenangaben beantworten.</p></details>
+      <details><summary>Löscht Jinx Dateien automatisch?</summary><p>Nein. Duplikate werden zur Prüfung bereitgestellt; Umbenennungen und Verschiebungen erfordern deine Freigabe.</p></details>
+      <details><summary>Ist Jinx auf dem Smartphone nutzbar?</summary><p>Ja, die Browseroberfläche ist für kleinere Bildschirme ausgelegt.</p></details>
+      <details><summary>Kann Jinx schon Rechnungen erstellen?</summary><p>Noch nicht. Eine umfassende Rechnungsfunktion ist in Planung.</p></details>
+    </div>
+  </section>
+
+</main>
